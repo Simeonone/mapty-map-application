@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+    <script defer src="script.js"></script>
+    <title>Map your Activities</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <p class="introText">
+        Click anywhere on the <span class="mapTxt">MAP</span> to add places near
+        you that you would like to go
+      </p>
+      <div class="switchBtn">
+        <button type="button" class="switch">Switch to map view</button>
+      </div>
+      <div class="sidebarMenu">
+        <button class="sidebarMenuBtn" type="button">Clear All</button>
+        <button class="sidebarMenuBtn2" type="button">
+          How to Edit / Delete items
+        </button>
+      </div>
+      <ul class="activities">
+        <form class="form hidden">
+          <div class="form__row">
+            <label class="form__label">Description</label>
+            <!-- <select class="form__input form__input--type">
+              <option value="running">Running</option>
+              <option value="cycling">Cycling</option>
+            </select> -->
+            <input type="text" class="form__input form__input--description" />
+          </div>
+
+          <div class="form__row">
+            <label class="form__label">Duration</label>
+            <input
+              type="number"
+              class="form__input form__input--duration"
+              placeholder="min"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Importance</label>
+            <!-- <input
+              class="form__input form__input--cadence"
+              placeholder="step/min"
+            /> -->
+            <select class="form__input form__input--type">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <!-- <label class="form__label">Distance</label>
+            <input class="form__input form__input--distance" placeholder="km" /> -->
+            <input type="submit" class="btn--Submit" value="Submit" />
+          </div>
+          <!-- <button class="form__btn">OK</button> -->
+        </form>
+      </ul>
+      <p class="footerTxt">
+        Total Time ⏱: <span class="totalMinutes"></span> min
+      </p>
+      <p class="disclaimer">
+        <i>*Information will be saved for your next visit</i>
+      </p>
+    </div>
+    <div id="map"></div>
+    <button type="button" class="switchToSideBar">Switch to sidebar</button>
+    <!-- <button type="button" class="switch">Switch to map view</button> -->
+    <div class="modal hiddenTutorial">
+      <button class="close-modal">&times;</button>
+      <h1 style="color: black">
+        How to edit and delete a task, and view total time.
+      </h1>
+      <p>
+        <img src="tutorial.png" class="tutorial" alt="" />
+      </p>
+    </div>
+    <div class="overlay hiddenTutorial"></div>
+  </body>
+</html>
