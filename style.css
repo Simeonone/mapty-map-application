@@ -457,8 +457,15 @@ a:visited {
     cursor: pointer;
     background-color: var(--color-dark--3);
   }
-  .introText {
+  /* .introText {
     display: none;
+  } */
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .switchToSideBar {
+    margin-bottom: 1rem;
   }
   .disclaimer {
     display: none;
