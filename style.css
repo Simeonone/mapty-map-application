@@ -389,6 +389,9 @@ a:visited {
   cursor: pointer;
   background-color: var(--color-dark--3);
 }
+.tutorial-small {
+  display: none;
+}
 
 @media (max-width: 640px) {
   /* .sidebar {
@@ -448,6 +451,19 @@ a:visited {
     background-color: var(--color-light--1);
     color: var(--color-dark--1);
     display: inline; */
+  }
+  .tutorial-small {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  .tutorial {
+    display: none;
+  }
+  img.resize {
+    width: 10%; /* you can use % */
+    height: 10%;
   }
   .switchBtn {
     text-align: center;
