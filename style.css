@@ -483,9 +483,9 @@ a:visited {
   .switchToSideBar {
     margin-bottom: 1rem;
   }
-  .disclaimer {
+  /* .disclaimer {
     display: none;
-  }
+  } */
   #map {
     display: none;
   }
