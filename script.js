@@ -4,7 +4,6 @@ const form = document.querySelector('.form');
 const containerActivities = document.querySelector('.activities');
 const inputType = document.querySelector('.form__input--type');
 const inputDescription = document.querySelector('.form__input--description');
-//above- formerly inputDistance
 const inputDuration = document.querySelector('.form__input--duration');
 // let map, mapEvent;
 
@@ -32,7 +31,6 @@ class Activity {
   }
 }
 class subActivity extends Activity {
-  //CFO BEFORE ERROR
   constructor(coords, description, duration, type) {
     super(coords);
     this.type = type;
@@ -41,8 +39,6 @@ class subActivity extends Activity {
     this._setSpecification();
   }
 }
-// const act1 = new subActivity([39, -12], 'running', 22);
-// console.log(act1);
 class App {
   #map;
   #mapZoomLevel = 13;
@@ -114,7 +110,6 @@ class App {
     // //guard clause - below
     if (!(description.length > 0)) return alert(`Description cannot be empty`);
     if (!(duration > 0)) return alert(`Duration has to be greater than 0`);
-    // console.log(type); aa
     const subActivity1 = new subActivity(
       [lat, lng],
       description,
@@ -130,7 +125,6 @@ class App {
     //render activity on list
     //hide form + clear input fields
     this._hideForm();
-    // console.log(this.#mapEvent);
     //set local storage to all workouts
     this._setLocalStorage(this.#allActivities);
   }
@@ -202,34 +196,21 @@ class App {
     if (e.target.querySelector('button')) {
       e.target.querySelector('.innerbtn').style.display = 'block';
       e.target.parentNode.querySelector('.deleteBtn').style.display = 'inline';
-      console.log(e.target.parentNode);
       e.target.parentNode
         .querySelector('.deleteBtn')
         .addEventListener('click', function () {
-          console.log(
-            e.target.parentNode.querySelector('.activity__title').textContent
-          );
-          console.log(activity2);
           const data2 = JSON.parse(localStorage.getItem('allActivities'));
-          console.log(data2);
           if (activity2 > -1) {
             data2.splice(activity2, 1);
           }
-          console.log(data2);
           localStorage.setItem('allActivities', JSON.stringify(data2));
-          // this._setLocalStorage(data2);
           location.reload();
-          //   console.log(this);
         });
     }
-    // console.log(e.target.closest('button'));
-    // console.log(this.#allActivities[activity2].description);
-    // console.log(document.querySelector('.innerbtn')); aa
     if (e.target.querySelector('.innerbtn')) {
       e.target
         .querySelector('.innerbtn')
         .addEventListener('click', function () {
-          //   console.log(e.target.parentNode);
           e.target.parentNode.querySelector('.activity__value').style.display =
             'none';
           e.target.parentNode.querySelector('.minEditor').style.display = '';
@@ -238,15 +219,10 @@ class App {
           e.target.parentNode.querySelector('.innerbtn').style.display = 'none';
           e.target.parentNode.querySelector('.activity__unit').style.display =
             'none';
-          //   document.querySelector('.activity__value').style.width = '2px';
-          //   document.querySelector('.activity__value').style.margin = '0';
-          // document.querySelector('.activity__details').style.display =
-          //     'inline-block';
         });
     }
     if (e.target.parentNode.querySelector('.innerbtn2')) {
       //   this.#allActivities[activity2].duration = +888;
-      //   console.log(this.#allActivities); aa
       e.target.parentNode
         .querySelector('.innerbtn2')
         .addEventListener('click', function () {
@@ -254,8 +230,6 @@ class App {
             e.target.parentNode.querySelector('.minEditor') &&
             e.target.parentNode.querySelector('.minEditor').value > 0
           ) {
-            // console.log(e.target.parentNode.querySelector('.minEditor').value); aa
-            // console.log(e.target.parentNode);
             e.target.parentNode.querySelector(
               '.activity__value'
             ).style.display = '';
@@ -265,7 +239,6 @@ class App {
               '';
             e.target.parentNode.querySelector('.saveChanges').style.display =
               'inline';
-            // console.log(e.target.parentNode.querySelector('.deleteBtn'));
             // e.target.parentNode.querySelector('.deleteBtn').style.display =
             //   'inline';
             e.target.parentNode.querySelector('.innerbtn2').style.display =
@@ -276,12 +249,8 @@ class App {
         });
     }
     if (e.target.parentNode.querySelector('.activity__value')) {
-      //////I DONT KNOW WHAT IM DOING HERE
-      console.log(e.target.parentNode.querySelector('.activity__value'));
       this.#allActivities[activity2].duration =
         +e.target.parentNode.querySelector('.activity__value').textContent;
-      console.log(this.#allActivities[activity2].duration);
-      console.log(this.#allActivities[activity2]);
       let totalArr = [];
       this.#allActivities.forEach(element => {
         totalArr.push(element.duration);
@@ -291,32 +260,18 @@ class App {
       }, 0);
       document.querySelector('.footerTxt').style.display = 'inline';
       document.querySelector('.totalMinutes').textContent = totalSum;
-      console.log(totalArr, totalSum);
-      console.log(this.#allActivities);
-      console.log(`in btn`);
       const data = JSON.parse(localStorage.getItem('allActivities'));
-      console.log(data);
-      //   console.log(data.id);
       data.forEach(element => {
         if (e.target.parentNode.getAttribute('data-id') === element.id) {
-          console.log(element);
-          console.log(this.#allActivities[activity2].duration);
           element.duration =
             +e.target.parentNode.querySelector('.activity__value').textContent;
-          console.log(element);
         }
-        // console.log(element);
-        console.log(this.#allActivities);
-        console.log(`down below`);
         this._setLocalStorage(this.#allActivities);
         // localStorage.setItem(
         //   'allActivities',
         //   JSON.stringify(this.#allActivities)
         // );
-        // console.log(element.id === e.target.parentNode);
       });
-      console.log(this.#allActivities[activity2].duration);
-      console.log(`kirk`);
       e.target.parentNode
         .querySelector('.saveChanges')
         .addEventListener('click', function () {
@@ -324,10 +279,7 @@ class App {
             'none';
           location.reload();
         });
-      /////I DONT KNOW WHAT IM DOING HERE TOO
     }
-    // console.log(subActivity1);
-    // console.log(activityEl); aa
     //guard clause-below
     if (!activityEl) return;
     const activity = this.#allActivities.find(

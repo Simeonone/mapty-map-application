@@ -80,11 +80,7 @@ a:visited {
   gap: 0.75rem 1.5rem;
 }
 .workout__title:hover {
-  /* border-bottom: #aaa solid 0.2rem; */
-  /* opacity: 80%; */
   color: #7c92a1;
-  /* border-radius: 1rem; */
-  /* background-color: #aaa; */
 }
 .workout--low {
   border-left: 5px solid var(--color-brand--1);
@@ -96,23 +92,16 @@ a:visited {
   border-left: 5px solid var(--color-brand--3);
 }
 .workout__title {
-  /* font-size: 1.7rem;
-  font-weight: 600; */
   grid-column: 1 / -1;
   text-align: left;
   font-size: 1.7rem;
   font-weight: 600;
-  /* border-right: 20rem; */
 }
-/* .editBtn {
-  margin-left: 2rem;
-} */
 .h2cnt {
   display: flex;
   justify-content: space-between;
 }
 .workout__details {
-  /* display: flex; */
   align-items: baseline;
 }
 
@@ -203,10 +192,6 @@ a:visited {
 .deleteBtn {
   display: none;
 }
-/* .revertChanges:hover {
-  color: #3a2424;
-  cursor: pointer;
-} */
 .sidebarMenuBtn,
 .sidebarMenuBtn2,
 .btn--Submit,
@@ -411,7 +396,7 @@ a:visited {
     display: none;
   }
   img.resize {
-    width: 10%; /* you can use % */
+    width: 10%;
     height: 10%;
   }
   .switchBtn {
