@@ -157,7 +157,6 @@ a:visited {
 
 .form__label {
   margin-right: 0.4rem;
-  /* flex: 0 0 50%; */
   display: flex;
   font-size: 1.5rem;
   font-weight: 600;
@@ -172,7 +171,6 @@ a:visited {
 .sidebarMenuBtn,
 .sidebarMenuBtn2 {
   margin-right: 1rem;
-  /* font-weight: bold; */
   font-size: 1.5rem;
   margin-bottom: 2rem;
   display: none;

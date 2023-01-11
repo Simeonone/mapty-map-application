@@ -5,7 +5,6 @@ const containerActivities = document.querySelector('.activities');
 const inputType = document.querySelector('.form__input--type');
 const inputDescription = document.querySelector('.form__input--description');
 const inputDuration = document.querySelector('.form__input--duration');
-// let map, mapEvent;
 
 class Activity {
   date = new Date();
