@@ -10,10 +10,12 @@ This website utilizes the Object Oriented Programming side of JavaScript to oper
 
 
 # How to operate the website
-Start by allowing location access, then click anywhere on the map.
+Start by allowing location access, then you can repeat the following steps as many times as possible:
+
+click anywhere on the map.
 
 Then, on the left, a form will appear. 
 
-Add a short description (e.g. buy meeting with Brian), and duration (how long it will take you to finish the task), and set the importance(low, medium or high).
+Add a short description (e.g. meeting with Brian), and duration (how long it will take you to finish the task), and set the importance(low, medium or high).
 
 Finally, click on submit.
